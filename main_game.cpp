@@ -3,9 +3,6 @@
 #include <stdlib.h>
 #include "Characters.h"
 
-void stop(unsigned int param);
-
-
     struct Player{
         std::string name {" "};
         unsigned int HP{100};
