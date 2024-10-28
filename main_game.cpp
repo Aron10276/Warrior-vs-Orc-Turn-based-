@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include "Characters.h"
 
+void stop(unsigned int param);
+
+
     struct Player{
         std::string name {" "};
         unsigned int HP{100};
@@ -20,38 +23,35 @@
     bool gameOn(int player_status, int enemy_status){
         if(player_status <= 0 && enemy_status >= 1){
             std::cout << "``Player lose, game over``";
+            Sleep(5);
             return false;
         }
-        else{
-            return true;
-        }
+        
+    return true;
+    
     }
 
     bool gameOff(int player_status, int enemy_status){
         if(player_status >= 1 && enemy_status <= 0){
             std::cout << "``Player wins!!``";
+            Sleep(5);
             return false;
         }
-        else{
-            return true;
-        }
+       
+     return true;
+     
     }
 
     bool gameTie(int player_status, int enemy_status){
         if (player_status <= 0 && enemy_status <= 0){
             std::cout << "``Game Tie``";
+            Sleep(5);
            return false;
         }
-        else {
-            return true;
-        }
+        return true;
     }
     
-     void stop(unsigned int param){ 
-        Sleep(param);
-        exit(true);
-    }
-    
+     
 int main(){
     //game updates
     std::cout << "``Welcome to Basic Attack Demo``\n 1. Play \n" <<"Press '1' to play: ";
@@ -93,7 +93,8 @@ int main(){
                 
     }
 
-    std::cout << "\n\nExiting...";
-    stop(10);
+  
 
 }
+
+
