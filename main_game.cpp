@@ -17,38 +17,30 @@
     };
 
 
-    bool gameOn(int player_status, int enemy_status){
+    bool gameState(int player_status, int enemy_status){
         if(player_status <= 0 && enemy_status >= 1){
-            std::cout << "``Player lose, game over``";
+            std::cout << "\n``Player lose, game over``\n";
             Sleep(5);
             return false;
+        }
+
+         if(player_status >= 1 && enemy_status <= 0){
+            std::cout << "\n``Player wins!!``\n";
+            Sleep(5);
+            return false;
+        }
+
+         if (player_status <= 0 && enemy_status <= 0){
+            std::cout << "\n``Game Tie``\n";
+            Sleep(5);
+           return false;
         }
         
     return true;
     
     }
 
-    bool gameOff(int player_status, int enemy_status){
-        if(player_status >= 1 && enemy_status <= 0){
-            std::cout << "``Player wins!!``";
-            Sleep(5);
-            return false;
-        }
-       
-     return true;
-     
-    }
-
-    bool gameTie(int player_status, int enemy_status){
-        if (player_status <= 0 && enemy_status <= 0){
-            std::cout << "``Game Tie``";
-            Sleep(5);
-           return false;
-        }
-        return true;
-    }
-    
-     
+   
 int main(){
     //game updates
     std::cout << "``Welcome to Basic Attack Demo``\n 1. Play \n" <<"Press '1' to play: ";
@@ -66,7 +58,7 @@ int main(){
 
     
 
-    while(gameOff(warrior.HP, orc.HP) != false && gameOn(warrior.HP, orc.HP) != false && gameTie(warrior.HP, orc.HP) != false){
+    while(gameState(warrior.HP, orc.HP) != false){
       // In-game   
 
             std::cout << "\n\n";
@@ -90,7 +82,7 @@ int main(){
                 
     }
 
-  
+    system("pause");
 
 }
 
