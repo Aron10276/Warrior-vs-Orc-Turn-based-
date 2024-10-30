@@ -20,19 +20,16 @@
     bool gameState(int player_status, int enemy_status){
         if(player_status <= 0 && enemy_status >= 1){
             std::cout << "\n``Player lose, game over``\n";
-            Sleep(5);
             return false;
         }
 
          if(player_status >= 1 && enemy_status <= 0){
             std::cout << "\n``Player wins!!``\n";
-            Sleep(5);
             return false;
         }
 
          if (player_status <= 0 && enemy_status <= 0){
             std::cout << "\n``Game Tie``\n";
-            Sleep(5);
            return false;
         }
         
@@ -82,7 +79,7 @@ int main(){
                 
     }
 
-    system("pause");
+ system("pause");
 
 }
 
